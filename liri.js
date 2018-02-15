@@ -102,7 +102,7 @@ function thisMovie() {
             console.log("Title: " + movieData.Title);
             console.log("Year: " + movieData.Year);
             console.log("IMDB Rating: " + movieData.imdbRating);
-            console.log("Rotten Tomatoes Rating: " + movieData.tomatoUserRating);
+            console.log("Rotten Tomatoes Rating: " + movieData.tomatoRating);
             console.log("Country: " + movieData.Country);
             console.log("Language: " + movieData.Language);
             console.log("Plot: " + movieData.Plot);
@@ -160,13 +160,11 @@ function doWhatItSays() {
                                 console.log("Title: " + movieData.Title);
                                 console.log("Year: " + movieData.Year);
                                 console.log("IMDB Rating: " + movieData.imdbRating);
+                                console.log("Rotten Tomatoes Rating: " + movieData.tomatoRating);
                                 console.log("Country: " + movieData.Country);
                                 console.log("Language: " + movieData.Language);
                                 console.log("Plot: " + movieData.Plot);
                                 console.log("Actors: " + movieData.Actors);
-                                console.log("Rotten Tomatoes Rating: " + movieData.tomatoUserRating);
-                                console.log("Rotten Tomatoes URL: " + movieData.tomatoURL);
-
                             } else {
                                 console.log(error);
                             }
