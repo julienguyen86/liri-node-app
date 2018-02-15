@@ -11,7 +11,7 @@ var keys = require('./keys.js');
 // Grab the twitter package
 var twitter = require('twitter');
 var client = new twitter(keys.twitterKeys);
-var params = {screen_name: 'FoxNews', count: 20};
+var params = { screen_name: 'FoxNews', count: 20 };
 
 // Grab the spotify package
 var Spotify = require('node-spotify-api');
@@ -48,7 +48,7 @@ function myTweets() {
                 console.log(tweets[i].created_at);
                 // log tweets text.
                 console.log(tweets[i].text);
-              
+
             }
         }
     })
@@ -132,29 +132,29 @@ function doWhatItSays() {
                     function spotifySong() {
                         var queryInput = "what's my age again";
                         if (argTwo !== undefined) {
-                            queryInput = argTwo;
+                            song = argTwo;
                         }
-                        spotify.search({ type: 'track', query: queryInput, count: 1 }, function(err, data) {
+                        spotify.search({ type: 'track', query: song }, function(err, data) {
                             if (err) {
                                 console.log('Error occurred: ' + err);
                                 return;
                             }
+                            // logs the artists, song name, spotify preview link
                             console.log("Artist: " + data.tracks.items[0].artists[0].name);
                             console.log("Song Name: " + data.tracks.items[0].name);
                             console.log("Spotify Preview Link: " + data.tracks.items[0].external_urls.spotify);
                             console.log("Album: " + data.tracks.items[0].album.name);
-
                         });
                     }
                     spotifySong();
                     break;
                 case "movie-this":
                     function thisMovie() {
-                        var queryInput = "Mr. Nobody";
+                        var movieName = "Mr. Nobody";
                         if (argTwo !== undefined) {
-                            queryInput = argTwo;
+                            movieName = argTwo;
                         }
-                        request('http://www.omdbapi.com/?t=' + queryInput + "&tomatoes=true", function(error, response, body) {
+                        request('http://www.omdbapi.com/?t=' + movieName + "&tomatoes=true", function(error, response, body) {
                             if (!error && response.statusCode == 200) {
                                 var movieData = JSON.parse(body);
                                 console.log("Title: " + movieData.Title);
