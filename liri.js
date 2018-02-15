@@ -126,10 +126,10 @@ function doWhatItSays() {
             var argTwo = dataArray[1];
             switch (argOne) {
                 case "my-tweets":
-                    getTweets();
+                    myTweets();
                     break;
                 case "spotify-this-song":
-                    function getSong() {
+                    function spotifySong() {
                         var queryInput = "what's my age again";
                         if (argTwo !== undefined) {
                             queryInput = argTwo;
@@ -146,10 +146,10 @@ function doWhatItSays() {
 
                         });
                     }
-                    getSong();
+                    spotifySong();
                     break;
                 case "movie-this":
-                    function getMovie() {
+                    function thisMovie() {
                         var queryInput = "Mr. Nobody";
                         if (argTwo !== undefined) {
                             queryInput = argTwo;
@@ -170,7 +170,7 @@ function doWhatItSays() {
                             }
                         });
                     }
-                    getMovie();
+                    thisMovie();
                     break;
             }
         }
